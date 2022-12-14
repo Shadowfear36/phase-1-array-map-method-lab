@@ -1,0 +1,40 @@
+const tutorials = [
+  'what does the this keyword mean?',
+  'What is the Constructor OO pattern?',
+  'implementing Blockchain Web API',
+  'The Test Driven Development Workflow',
+  'What is NaN and how Can we Check for it',
+  'What is the difference between stopPropagation and preventDefault?',
+  'Immutable State and Pure Functions',
+  'what is the difference between == and ===?',
+  'what is the difference between event capturing and bubbling?',
+  'what is JSONP?'
+];
+
+function seperateSentence(sentence){
+  // for (let i = 0; i < sentence.length; i++) {
+  //   console.log(sentence[i]);
+  //   const newArray = sentence[i].split(' ')
+  //   return newArray;
+
+  const newArray = sentence.map(element => element.split(' '));
+  return newArray;
+  }
+function capitalizeWords(arr) {
+  return arr.map(element => {
+    return element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
+  });
+}
+
+function combineFoo(array) {
+  const seperate = seperateSentence(array);
+  const capitalize = capitalizeWords(seperate);
+  return capitalize.join(' ');
+}
+
+const titleCased = (arr2) => {
+  return arr2.map(element => combineFoo(element));
+
+}
+
+// const arr2 = tutorials.map(element => console.log(element))
